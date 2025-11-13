@@ -1,0 +1,17 @@
+{
+  "name": "Ray Development",
+  "image": "rayproject/ray:latest",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  },
+  "runArgs": ["--shm-size=2g"],
+  "workspaceFolder": "/workspace",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  ]
+}
