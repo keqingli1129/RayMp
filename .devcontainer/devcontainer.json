@@ -1,6 +1,6 @@
 {
   "name": "Ray Development",
-  "image": "rayproject/ray:latest",
+  "image": "rayproject/ray:latest-py311",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -9,7 +9,10 @@
       ]
     }
   },
-  "runArgs": ["--shm-size=2g"],
+  "runArgs": [
+    "--shm-size=2g",
+    "--gpus", "all" // <-- Add these two entries
+  ],
   "workspaceFolder": "/workspace",
   "mounts": [
     "source=${localWorkspaceFolder},target=/workspace,type=bind"
