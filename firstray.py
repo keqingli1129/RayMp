@@ -1,7 +1,7 @@
 import ray
 
 # Initialize Ray
-ray.init()
+ray.init(num_gpus=0)
 
 @ray.remote
 def square(x):

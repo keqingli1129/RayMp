@@ -1,6 +1,11 @@
 {
   "name": "Ray Development",
-  "image": "rayproject/ray:latest-py311",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "containerEnv": {
+  "RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO": "0"
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -10,7 +15,7 @@
     }
   },
   "runArgs": [
-    "--shm-size=2g",
+    "--shm-size=16g",
     "--gpus", "all" // <-- Add these two entries
   ],
   "workspaceFolder": "/workspace",
